@@ -1,0 +1,24 @@
+﻿  Queue.cpp
+C:\Users\Дима\OneDrive\Рабочий стол\ОС\Operating-systems\lab6\lab6\QueueDLL\Queue.h(22,11): warning C4251: SharedBuffer::mtx: class "std::mutex" должен иметь dll-интерфейс для использования клиентами class "SharedBuffer"
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\mutex(132,19): message : см. объявление "std::mutex"
+C:\Users\Дима\OneDrive\Рабочий стол\ОС\Operating-systems\lab6\lab6\QueueDLL\Queue.h(23,24): warning C4251: SharedBuffer::notFull: class "std::condition_variable" должен иметь dll-интерфейс для использования клиентами class "SharedBuffer"
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\mutex(639,19): message : см. объявление "std::condition_variable"
+C:\Users\Дима\OneDrive\Рабочий стол\ОС\Operating-systems\lab6\lab6\QueueDLL\Queue.h(24,24): warning C4251: SharedBuffer::notEmpty: class "std::condition_variable" должен иметь dll-интерфейс для использования клиентами class "SharedBuffer"
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\mutex(639,19): message : см. объявление "std::condition_variable"
+C:\Users\Дима\OneDrive\Рабочий стол\ОС\Operating-systems\lab6\lab6\QueueDLL\Queue.cpp(10,15): warning C4273: SharedBuffer::SharedBuffer: несовместимое связывание dll
+C:\Users\Дима\OneDrive\Рабочий стол\ОС\Operating-systems\lab6\lab6\QueueDLL\Queue.h(26,5): message : см. предыдущее определение "{ctor}"
+C:\Users\Дима\OneDrive\Рабочий стол\ОС\Operating-systems\lab6\lab6\QueueDLL\Queue.cpp(14,16): warning C4273: SharedBuffer::~SharedBuffer: несовместимое связывание dll
+C:\Users\Дима\OneDrive\Рабочий стол\ОС\Operating-systems\lab6\lab6\QueueDLL\Queue.h(27,6): message : см. предыдущее определение "{dtor}"
+C:\Users\Дима\OneDrive\Рабочий стол\ОС\Operating-systems\lab6\lab6\QueueDLL\Queue.cpp(18,20): warning C4273: SharedBuffer::add: несовместимое связывание dll
+C:\Users\Дима\OneDrive\Рабочий стол\ОС\Operating-systems\lab6\lab6\QueueDLL\Queue.h(28,10): message : см. предыдущее определение "add"
+C:\Users\Дима\OneDrive\Рабочий стол\ОС\Operating-systems\lab6\lab6\QueueDLL\Queue.cpp(30,20): warning C4273: SharedBuffer::remove: несовместимое связывание dll
+C:\Users\Дима\OneDrive\Рабочий стол\ОС\Operating-systems\lab6\lab6\QueueDLL\Queue.h(29,10): message : см. предыдущее определение "remove"
+C:\Users\Дима\OneDrive\Рабочий стол\ОС\Operating-systems\lab6\lab6\QueueDLL\Queue.cpp(44,20): warning C4273: SharedBuffer::writeToFile: несовместимое связывание dll
+C:\Users\Дима\OneDrive\Рабочий стол\ОС\Operating-systems\lab6\lab6\QueueDLL\Queue.h(30,10): message : см. предыдущее определение "writeToFile"
+C:\Users\Дима\OneDrive\Рабочий стол\ОС\Operating-systems\lab6\lab6\QueueDLL\Queue.cpp(64,20): warning C4273: SharedBuffer::readFromFile: несовместимое связывание dll
+C:\Users\Дима\OneDrive\Рабочий стол\ОС\Operating-systems\lab6\lab6\QueueDLL\Queue.h(31,10): message : см. предыдущее определение "readFromFile"
+C:\Users\Дима\OneDrive\Рабочий стол\ОС\Operating-systems\lab6\lab6\QueueDLL\Queue.cpp(86,20): warning C4273: SharedBuffer::waitForEmpty: несовместимое связывание dll
+C:\Users\Дима\OneDrive\Рабочий стол\ОС\Operating-systems\lab6\lab6\QueueDLL\Queue.h(32,10): message : см. предыдущее определение "waitForEmpty"
+C:\Users\Дима\OneDrive\Рабочий стол\ОС\Operating-systems\lab6\lab6\QueueDLL\Queue.cpp(91,20): warning C4273: SharedBuffer::waitForNotFull: несовместимое связывание dll
+C:\Users\Дима\OneDrive\Рабочий стол\ОС\Operating-systems\lab6\lab6\QueueDLL\Queue.h(33,10): message : см. предыдущее определение "waitForNotFull"
+  QueueDLL.vcxproj -> C:\Users\Дима\OneDrive\Рабочий стол\ОС\Operating-systems\lab6\lab6\x64\Debug\QueueDLL.dll

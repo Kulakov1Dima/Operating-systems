@@ -1,0 +1,9 @@
+﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(531,5): warning MSB8028: промежуточный каталог (x64\Debug\) содержит файлы, которые используются совместно с другим проектом (lab5.vcxproj).  Это может привести к ошибкам очистки и перестроения.
+  lab6.cpp
+C:\Users\Дима\OneDrive\Рабочий стол\ОС\Operating-systems\lab6\lab6\QueueDLL\Queue.h(22,11): warning C4251: SharedBuffer::mtx: class "std::mutex" должен иметь dll-интерфейс для использования клиентами class "SharedBuffer"
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\mutex(132,19): message : см. объявление "std::mutex"
+C:\Users\Дима\OneDrive\Рабочий стол\ОС\Operating-systems\lab6\lab6\QueueDLL\Queue.h(23,24): warning C4251: SharedBuffer::notFull: class "std::condition_variable" должен иметь dll-интерфейс для использования клиентами class "SharedBuffer"
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\mutex(639,19): message : см. объявление "std::condition_variable"
+C:\Users\Дима\OneDrive\Рабочий стол\ОС\Operating-systems\lab6\lab6\QueueDLL\Queue.h(24,24): warning C4251: SharedBuffer::notEmpty: class "std::condition_variable" должен иметь dll-интерфейс для использования клиентами class "SharedBuffer"
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\mutex(639,19): message : см. объявление "std::condition_variable"
+  lab5.vcxproj -> C:\Users\Дима\OneDrive\Рабочий стол\ОС\Operating-systems\lab6\lab6\x64\Debug\lab6.exe
