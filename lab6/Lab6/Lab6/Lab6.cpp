@@ -27,7 +27,7 @@ DWORD WINAPI AddToBuffer(LPVOID lpParam) {
 }
 
 
-DWORD WINAPI SaveToFileThread(LPVOID lpParam) {
+DWORD WINAPI Save(LPVOID lpParam) {
     while (true) {
         WaitForSingleObject(dataReady, INFINITE);
 
@@ -60,7 +60,7 @@ int main() {
     allFileReady = CreateEvent(NULL, TRUE, FALSE, NULL);
 
     HANDLE addToBufferThread = CreateThread(NULL, 0, AddToBuffer, NULL, 0, NULL);
-    HANDLE saveToFileThread = CreateThread(NULL, 0, SaveToFileThread, NULL, 0, NULL);
+    HANDLE saveToFileThread = CreateThread(NULL, 0, Save, NULL, 0, NULL);
 
     WaitForSingleObject(allFileReady, INFINITE);
 
