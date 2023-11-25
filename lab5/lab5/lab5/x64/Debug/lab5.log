@@ -1,0 +1,10 @@
+﻿  lab5.cpp
+     Создается библиотека D:\Операционные системы\Operating-systems\lab5\lab5\x64\Debug\lab5.lib и объект D:\Операционные системы\Operating-systems\lab5\lab5\x64\Debug\lab5.exp
+lab5.obj : error LNK2019: ссылка на неразрешенный внешний символ "public: __cdecl Queue::Queue(int)" (??0Queue@@QEAA@H@Z) в функции main.
+lab5.obj : error LNK2019: ссылка на неразрешенный внешний символ "public: __cdecl Queue::~Queue(void)" (??1Queue@@QEAA@XZ) в функции main.
+lab5.obj : error LNK2019: ссылка на неразрешенный внешний символ "public: void __cdecl Queue::add(int)" (?add@Queue@@QEAAXH@Z) в функции main.
+lab5.obj : error LNK2019: ссылка на неразрешенный внешний символ "public: void __cdecl Queue::del(void)" (?del@Queue@@QEAAXXZ) в функции main.
+lab5.obj : error LNK2019: ссылка на неразрешенный внешний символ "public: int __cdecl Queue::getFront(void)" (?getFront@Queue@@QEAAHXZ) в функции main.
+lab5.obj : error LNK2019: ссылка на неразрешенный внешний символ "public: void __cdecl Queue::writeToFile(char const *)" (?writeToFile@Queue@@QEAAXPEBD@Z) в функции main.
+lab5.obj : error LNK2019: ссылка на неразрешенный внешний символ "public: void __cdecl Queue::readFromFile(char const *)" (?readFromFile@Queue@@QEAAXPEBD@Z) в функции main.
+D:\Операционные системы\Operating-systems\lab5\lab5\x64\Debug\lab5.exe : fatal error LNK1120: неразрешенных внешних элементов: 7

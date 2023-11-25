@@ -1,0 +1,30 @@
+﻿  Lab6.cpp
+  Queue.cpp
+D:\Операционные системы\Operating-systems\lab6\Lab6\Lab6\Queue.cpp(9,1): warning C4273: Queue::Queue: несовместимое связывание dll
+D:\Операционные системы\Operating-systems\lab6\Lab6\Lab6\Queue.h(21,5): message : см. предыдущее определение "{ctor}"
+D:\Операционные системы\Operating-systems\lab6\Lab6\Lab6\Queue.cpp(17,17): warning C4273: Queue::~Queue: несовместимое связывание dll
+D:\Операционные системы\Operating-systems\lab6\Lab6\Lab6\Queue.h(22,6): message : см. предыдущее определение "{dtor}"
+D:\Операционные системы\Operating-systems\lab6\Lab6\Lab6\Queue.cpp(21,27): warning C4273: Queue::add: несовместимое связывание dll
+D:\Операционные системы\Operating-systems\lab6\Lab6\Lab6\Queue.h(23,10): message : см. предыдущее определение "add"
+D:\Операционные системы\Operating-systems\lab6\Lab6\Lab6\Queue.cpp(32,22): warning C4273: Queue::isFull: несовместимое связывание dll
+D:\Операционные системы\Operating-systems\lab6\Lab6\Lab6\Queue.h(24,10): message : см. предыдущее определение "isFull"
+D:\Операционные системы\Operating-systems\lab6\Lab6\Lab6\Queue.cpp(36,23): warning C4273: Queue::isEmpty: несовместимое связывание dll
+D:\Операционные системы\Operating-systems\lab6\Lab6\Lab6\Queue.h(25,10): message : см. предыдущее определение "isEmpty"
+D:\Операционные системы\Operating-systems\lab6\Lab6\Lab6\Queue.cpp(40,19): warning C4273: Queue::del: несовместимое связывание dll
+D:\Операционные системы\Operating-systems\lab6\Lab6\Lab6\Queue.h(26,10): message : см. предыдущее определение "del"
+D:\Операционные системы\Operating-systems\lab6\Lab6\Lab6\Queue.cpp(50,23): warning C4273: Queue::getFront: несовместимое связывание dll
+D:\Операционные системы\Operating-systems\lab6\Lab6\Lab6\Queue.h(27,9): message : см. предыдущее определение "getFront"
+D:\Операционные системы\Operating-systems\lab6\Lab6\Lab6\Queue.cpp(58,47): warning C4273: Queue::writeToFile: несовместимое связывание dll
+D:\Операционные системы\Operating-systems\lab6\Lab6\Lab6\Queue.h(28,10): message : см. предыдущее определение "writeToFile"
+D:\Операционные системы\Operating-systems\lab6\Lab6\Lab6\Queue.cpp(75,48): warning C4273: Queue::readFromFile: несовместимое связывание dll
+D:\Операционные системы\Operating-systems\lab6\Lab6\Lab6\Queue.h(29,10): message : см. предыдущее определение "readFromFile"
+  Создание кода...
+     Создается библиотека D:\Операционные системы\Operating-systems\lab6\Lab6\Debug\Lab6.lib и объект D:\Операционные системы\Operating-systems\lab6\Lab6\Debug\Lab6.exp
+LINK : warning LNK4217: Символ "??0Queue@@QAE@H@Z (public: __thiscall Queue::Queue(int))", определенный в "Queue.obj", импортирован "Lab6.obj" в функции "_main".
+LINK : warning LNK4217: Символ "??1Queue@@QAE@XZ (public: __thiscall Queue::~Queue(void))", определенный в "Queue.obj", импортирован "Lab6.obj" в функции "_main".
+LINK : warning LNK4217: Символ "?add@Queue@@QAEXH@Z (public: void __thiscall Queue::add(int))", определенный в "Queue.obj", импортирован "Lab6.obj" в функции "_main".
+LINK : warning LNK4217: Символ "?del@Queue@@QAEXXZ (public: void __thiscall Queue::del(void))", определенный в "Queue.obj", импортирован "Lab6.obj" в функции "_main".
+LINK : warning LNK4217: Символ "?getFront@Queue@@QAEHXZ (public: int __thiscall Queue::getFront(void))", определенный в "Queue.obj", импортирован "Lab6.obj" в функции "_main".
+LINK : warning LNK4217: Символ "?writeToFile@Queue@@QAEXPBD@Z (public: void __thiscall Queue::writeToFile(char const *))", определенный в "Queue.obj", импортирован "Lab6.obj" в функции "_main".
+LINK : warning LNK4217: Символ "?readFromFile@Queue@@QAEXPBD@Z (public: void __thiscall Queue::readFromFile(char const *))", определенный в "Queue.obj", импортирован "Lab6.obj" в функции "_main".
+  Lab6.vcxproj -> D:\Операционные системы\Operating-systems\lab6\Lab6\Debug\Lab6.exe

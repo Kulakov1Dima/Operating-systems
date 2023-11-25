@@ -1,16 +1,9 @@
-#pragma once
-#ifdef QUEUE_EXPORTS
-#define QUEUE_API __declspec(dllexport)
-#else
-#define QUEUE_API __declspec(dllimport)
-#endif
-
-#include <iostream>
-#include <windows.h>
+#ifndef QUEUE_H
+#define QUEUE_H
 
 using namespace std;
 
-class QUEUE_API Queue {
+class __declspec(dllexport) Queue {
 private:
     int* arr; // Динамический массив
     int capacity; // Емкость массива
@@ -30,3 +23,4 @@ public:
 };
 extern "C" __declspec(dllexport) void testQueue();
 
+#endif
