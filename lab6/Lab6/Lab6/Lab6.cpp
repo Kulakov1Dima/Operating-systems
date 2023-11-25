@@ -3,8 +3,9 @@
 #include "..\QueueDLL\Queue.h"
 
 int sizeBuffer = 10;
+int delete_size = 4;
 
-Queue myQueue(sizeBuffer);
+Queue queue0(sizeBuffer);
 Queue buffer(sizeBuffer);
 
 HANDLE dataReady;
@@ -34,9 +35,9 @@ DWORD WINAPI Save(LPVOID lpParam) {
         while (!buffer.isEmpty()) {
             int value = buffer.getFront();
             buffer.del();
-            myQueue.add(value);
+            queue0.add(value);
 
-            myQueue.writeToFile("queue.txt");
+            queue0.writeToFile("queue.txt");
 
             SetEvent(fileReady);
         }
@@ -49,8 +50,6 @@ DWORD WINAPI Save(LPVOID lpParam) {
 
     return 0;
 }
-
-
 
 int main() {
     setlocale(LC_ALL, "Russian");
@@ -65,16 +64,16 @@ int main() {
     WaitForSingleObject(allFileReady, INFINITE);
 
 
-    std::cout << "Первый элемент в очереди: " << myQueue.getFront() << std::endl;
+    std::cout << "Первый элемент в очереди: " << queue0.getFront() << std::endl;
 
-    myQueue.writeToFile("queue.txt");
+    queue0.writeToFile("queue.txt");
 
-    Queue myQueue1(5);
-    myQueue1.readFromFile("queue.txt");
-    myQueue1.del();
-    myQueue1.del();
-    myQueue1.del();
-    std::cout << "Первый элемент в очереди после удаления трёх элементов: " << myQueue1.getFront() << std::endl;
+    Queue queue1(sizeBuffer);
+    queue1.readFromFile("queue.txt");
+    for (int i = 0; i < delete_size; i++) {
+        queue1.del();
+    }
+    std::cout << "Первый элемент в очереди после удаления "<< delete_size<< " элементов : " << queue1.getFront() << std::endl;
 
 
     CloseHandle(dataReady);
