@@ -5,7 +5,11 @@ using namespace std;
 
 class __declspec(dllexport) Queue {
 private:
-    
+    int* arr; // Динамический массив
+    int capacity; // Емкость массива
+    int front; // Индекс первого элемента в очереди
+    int rear; // Индекс последнего элемента в очереди
+    int count1; // Количество элементов в очереди
 public:
     Queue(int size);
     ~Queue();

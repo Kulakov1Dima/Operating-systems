@@ -10,7 +10,6 @@ int delete_size = 4;
 struct SharedData {
     HANDLE dataReady;
     int sizeBuffer;
-    Queue* buffer;
 };
 
 SharedData* pData;
@@ -65,8 +64,6 @@ PROCESS_INFORMATION start_proc() {
 }
 
 void add_buff() {
-    create_init_display_object();
-
     pData = static_cast<SharedData*>(MapViewOfFile(
         hMapFile,
         FILE_MAP_WRITE,
@@ -82,18 +79,50 @@ void add_buff() {
 
     pData->dataReady = CreateEvent(NULL, TRUE, FALSE, NULL);
     pData->sizeBuffer = sizeBuffer;
-    Queue buffer(sizeBuffer);
-    pData->buffer = &buffer;
 
     PROCESS_INFORMATION pi = start_proc();
     WaitForSingleObject(pi.hProcess, INFINITE);
     CloseHandle(pi.hProcess);
     CloseHandle(pi.hThread);
     CloseHandle(hMapFile);
+    
+}
+
+void read_init_display_object() {
+    hMapFile = OpenFileMapping(
+        FILE_MAP_READ,
+        FALSE,
+        L"MemoryFile");
+
+    if (hMapFile == NULL) {
+        cerr << "Ошибка при открытии файловой проекции: " << GetLastError() << std::endl;
+        exit(1);
+    }
+
+    pData = static_cast<SharedData*>(MapViewOfFile(
+        hMapFile,
+        FILE_MAP_READ,
+        0,
+        0,
+        sizeof(SharedData)));
+}
+
+DWORD WINAPI Readdispl(LPVOID lpParam) {
+    while (true) {
+        read_init_display_object();
+        Sleep(5000);
+    }
+
+    return 0;
 }
 
 int main() {
+    create_init_display_object();
     setlocale(LC_ALL, "Russian");
+    HANDLE addToBufferThread = CreateThread(NULL, 0, Readdispl, NULL, 0, NULL);
     add_buff();
+    WaitForSingleObject(pData->dataReady, INFINITE);
+    CloseHandle(addToBufferThread);
+    CloseHandle(pData->dataReady);
     return 0;
 }

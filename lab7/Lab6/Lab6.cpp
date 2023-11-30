@@ -7,11 +7,10 @@ using namespace std;
 struct SharedData {
     HANDLE dataReady;
     int sizeBuffer;
-    Queue* buffer;
 };
-
 SharedData* pData;
 HANDLE hMapFile;
+HANDLE fileReady;
 
 void read_init_display_object() {
     hMapFile = OpenFileMapping(
@@ -49,14 +48,20 @@ void create_init_display_object() {
 }
 
 DWORD WINAPI AddToBuffer(LPVOID lpParam) {
+    Queue buffer(pData->sizeBuffer);
     for (int i = 0; i < pData->sizeBuffer; i++) {
         int start = 10;
         int end = 200;
         int x = rand() % (end - start + 1) + start;
-        
-        pData->buffer->add(x);
+
+        buffer.add(x);
+
         std::cout << "Добавлено в буфер: " << x << std::endl;
+
     }
+    
+    buffer.writeToFile("queue.txt");
+    pData->sizeBuffer = pData->sizeBuffer;
     SetEvent(pData->dataReady);
     create_init_display_object();
     return 0;
@@ -80,5 +85,6 @@ int main() {
     check_init();
 
     UnmapViewOfFile(pData);
+    CloseHandle(hMapFile);
     return 0;
 }

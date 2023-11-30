@@ -4,11 +4,6 @@
 #include <windows.h>
 
 using namespace std;
-int* arr; // Динамический массив
-int capacity; // Емкость массива
-int front; // Индекс первого элемента в очереди
-int rear; // Индекс последнего элемента в очереди
-int count1; // Количество элементов в очереди
 
 Queue::Queue(int size)
 {
