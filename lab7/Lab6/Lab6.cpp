@@ -5,12 +5,11 @@
 using namespace std;
 
 struct SharedData {
-    HANDLE dataReady;
+    HANDLE allFileReady;
     int sizeBuffer;
 };
 SharedData* pData;
 HANDLE hMapFile;
-HANDLE fileReady;
 
 void read_init_display_object() {
     hMapFile = OpenFileMapping(
@@ -32,23 +31,9 @@ void read_init_display_object() {
     CloseHandle(hMapFile);
 }
 
-void create_init_display_object() {
-    hMapFile = CreateFileMapping(
-        INVALID_HANDLE_VALUE,
-        NULL,
-        PAGE_READWRITE,
-        0,
-        sizeof(SharedData),
-        L"MemoryFile");
-
-    if (hMapFile == NULL) {
-        std::cerr << "Ошибка при создании файловой проекции: " << GetLastError() << std::endl;
-        exit(1);
-    }
-}
-
-DWORD WINAPI AddToBuffer(LPVOID lpParam) {
+void AddToBuffer() {
     Queue buffer(pData->sizeBuffer);
+
     for (int i = 0; i < pData->sizeBuffer; i++) {
         int start = 10;
         int end = 200;
@@ -61,30 +46,34 @@ DWORD WINAPI AddToBuffer(LPVOID lpParam) {
     }
     
     buffer.writeToFile("queue.txt");
-    pData->sizeBuffer = pData->sizeBuffer;
-    SetEvent(pData->dataReady);
-    create_init_display_object();
-    return 0;
+    SetEvent(pData->allFileReady);
 }
 
-void check_init() {
+DWORD WINAPI check_init(LPVOID lpParam) {
     if (pData == nullptr) {
         std::cerr << "Ошибка при отображении файловой проекции: " << GetLastError() << std::endl;
         CloseHandle(hMapFile);
         exit(1);
     }
     else {
-        std::cout << "Размер буфера: " << pData->sizeBuffer << "\n";
-        AddToBuffer(NULL);
+        std::cout << "Размер буфера: " << pData->sizeBuffer << std::endl << std::endl;
+        AddToBuffer();
     }
 }
 
 int main() {
     setlocale(LC_ALL, "Russian");
     read_init_display_object();
-    check_init();
 
-    UnmapViewOfFile(pData);
+    HANDLE addToBufferThread = CreateThread(NULL, 0, check_init, NULL, 0, NULL);
+
+    Sleep(10);
+    std::cout << std::endl;
+
+    WaitForSingleObject(pData->allFileReady, INFINITE);
+
+    CloseHandle(addToBufferThread);
     CloseHandle(hMapFile);
+    CloseHandle(pData->allFileReady);
     return 0;
 }
