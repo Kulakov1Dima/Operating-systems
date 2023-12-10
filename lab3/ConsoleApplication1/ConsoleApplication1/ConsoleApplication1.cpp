@@ -11,6 +11,7 @@ int main() {
     std::cout << "Введите размерность N: ";
     std::cin >> N;
 
+    // Выделение памяти
     int** array = (int**)HeapAlloc(GetProcessHeap(), HEAP_ZERO_MEMORY, M * sizeof(int*));
     for (int i = 0; i < M; i++) {
         array[i] = (int*)HeapAlloc(GetProcessHeap(), HEAP_ZERO_MEMORY, N * sizeof(int));
@@ -25,6 +26,7 @@ int main() {
     }
 
     int* minValues = (int*)HeapAlloc(GetProcessHeap(), HEAP_ZERO_MEMORY, M * sizeof(int));
+    // Обработка содержимого
     for (int i = 0; i < M; i++) {
         minValues[i] = array[i][0];
         for (int j = 1; j < N; j++) {
