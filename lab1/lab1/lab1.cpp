@@ -29,6 +29,4 @@ int main()
     for (int i = 0; i < sizeof(mas) / sizeof(mas[0]); i++) {
         printf("%d ", mas[i]);
     }
-
 }
-

@@ -67,7 +67,7 @@ int main() {
 
     HANDLE addToBufferThread = CreateThread(NULL, 0, check_init, NULL, 0, NULL);
 
-    Sleep(10);
+    Sleep(10000);
     std::cout << std::endl;
 
     WaitForSingleObject(pData->allFileReady, INFINITE);

@@ -49,7 +49,7 @@ PROCESS_INFORMATION start_proc() {
         NULL,
         NULL,
         FALSE,
-        0,
+        CREATE_NEW_CONSOLE,
         NULL,
         NULL,
         &si,

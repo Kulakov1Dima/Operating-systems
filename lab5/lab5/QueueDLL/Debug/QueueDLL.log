@@ -1,1 +1,6 @@
-﻿  QueueDLL.vcxproj -> D:\Операционные системы\Operating-systems\lab5\lab5\Debug\QueueDLL.dll
+﻿  pch.cpp
+  dllmain.cpp
+  Queue.cpp
+  Создание кода...
+     Создается библиотека C:\Operating-systems\lab5\lab5\Debug\QueueDLL.lib и объект C:\Operating-systems\lab5\lab5\Debug\QueueDLL.exp
+  QueueDLL.vcxproj -> C:\Operating-systems\lab5\lab5\Debug\QueueDLL.dll
